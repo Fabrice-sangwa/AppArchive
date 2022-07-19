@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
     private void login(String matricule, String password) {
         progressBar.setVisibility(View.VISIBLE);
         boutonLogin.setEnabled(false);

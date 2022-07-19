@@ -14,17 +14,25 @@
         android:theme="@style/Theme.NewApp"
         tools:targetApi="31">
         <activity
+            android:parentActivityName=".HomePageActivity"
             android:name=".ProfileActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Home"/>
         <activity
+            android:parentActivityName=".HomePageActivity"
             android:name=".ListeTravailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Liste de Travail"/>
         <activity
+            android:parentActivityName=".HomePageActivity"
             android:name=".AjouterTravailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Ajouter un Trvail"/>
         <activity
+            android:parentActivityName=".HomePageActivity"
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Login"/>
         <activity
             android:name=".HomePageActivity"
             android:exported="true">

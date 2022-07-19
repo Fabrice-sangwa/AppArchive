@@ -5,63 +5,67 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-//Nous commennçns par renommer MainActivty en HomePage
-
 public class HomePageActivity extends AppCompatActivity {
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        //creation de la session
-        SharedPreferences session = getSharedPreferences("session",0);
-        //recuperer un element de la session
-        boolean sessionActive = session.getBoolean("session_active",false);
-        if(!sessionActive){
-            Intent loginIntent = new Intent(this,LoginActivity.class);
-            startActivity(loginIntent);
+
+        checkSessionActive();
+
+        configurerButtonLProfile();
+        configurerButtonAjouter();
+        configurerButtonListeTravail();
+    }
+
+    private void checkSessionActive() {
+        sharedPreferences = getSharedPreferences("session", MODE_PRIVATE);
+        boolean sessionActive = sharedPreferences.getBoolean("session_active", true);
+
+        if (!sessionActive) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
             finish();
         }
-        confgurerButonprofil();
-        configurerButonAjout();
-        configurerButonListetravail();
     }
-    private void configurerButonListetravail(){
-        Button listetravail = findViewById(R.id.liste);
-        listetravail.setOnClickListener(new View.OnClickListener() {
+
+    private void configurerButtonListeTravail() {
+        Button btnListeTrav = findViewById(R.id.btnlisteTravail);
+        btnListeTrav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent listIntent = new Intent(HomePageActivity.this ,listeTravailActivity.class);
+                Intent intent = new Intent(HomePageActivity.this, ListeTravailActivity.class);
+                startActivity(intent);
             }
         });
-
     }
-    private void configurerButonAjout(){
-        Button ajout = findViewById(R.id.ajouter);
-        ajout.setOnClickListener(new View.OnClickListener() {
+
+    private void configurerButtonAjouter() {
+        Button btnAjouter = findViewById(R.id.btnAjouter);
+        btnAjouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ajoutIntent = new Intent(HomePageActivity.this ,ajouterTravailActivity.class);
+                Intent intent = new Intent(HomePageActivity.this, AjouterTravailActivity.class);
+                startActivity(intent);
             }
         });
-
     }
-    private void confgurerButonprofil(){
-        Button profil = findViewById(R.id.liste);
-        profil.setOnClickListener(new View.OnClickListener() {
+
+    private void configurerButtonLProfile() {
+        Button btnProfile = findViewById(R.id.btnProfiel);
+        btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent profilIntent = new Intent(HomePageActivity.this ,profilTravailActivity.class);
+                Intent intent = new Intent(HomePageActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
-
     }
-}
-
-
-
-
 }
