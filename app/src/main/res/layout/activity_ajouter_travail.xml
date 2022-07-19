@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AjouterTravailActivity"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:inputType="textMultiLine"/>
+
+        <EditText
+            android:id="@+id/editTextPromotion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Promotion"
+            android:layout_marginTop="20dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/editTextCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Category"
+            android:layout_marginTop="20dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date Travail"
+            android:layout_marginTop="20dp"
+            android:inputType="text"/>
+
+        <Button
+            android:textAllCaps="false"
+            android:id="@+id/btnAjouterPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ajouter Photo" />
+
+        <TextView
+            android:id="@+id/tvImages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Photo :"/>
+
+        <Button
+            android:id="@+id/btnAjouterTravail"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ajouter/Modifier"/>
+
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+    </ProgressBar>
+
+</FrameLayout>
+
