@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+
+    android:gravity="center_horizontal"
     tools:context=".ProfileActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.imageview.ShapeableImageView
+        app:shapeAppearanceOverlay="@style/BordArrondi"
+        android:layout_width="100dp"
+        app:strokeColor="@color/yellow"
+        app:strokeWidth="4dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:layout_height="100dp"
+        android:src="@drawable/profilephoto"/>
+
+    <TextView
+        android:text="Nom: "
+        android:textSize="20sp"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <TextView
+        android:text="Matricule: "
+        android:textSize="20sp"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
