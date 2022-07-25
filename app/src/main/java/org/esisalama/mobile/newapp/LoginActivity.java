@@ -2,6 +2,7 @@ package org.esisalama.mobile.newapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -13,22 +14,26 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
-    EditText edMatricule  = findViewById(R.id.editTextMatricule);
-    EditText editPassword = findViewById(R.id.editTextPassWord);
-    Button  boutonLogin = findViewById(R.id.button_login);
+    private Button boutonLogin;
+    SharedPreferences sharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ProgressBar progressBar = findViewById(R.id.progress_bar);
+
+        EditText edMatricule = findViewById(R.id.editTextMatricule);
+        EditText edPassword = findViewById(R.id.editTextPassWord);
+
+        progressBar = findViewById(R.id.progress_bar);
+        boutonLogin = findViewById(R.id.button_login);
 
         boutonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String matricule = edMatricule.getText().toString();
-                String password = editPassword.getText().toString();
+                String password = edPassword.getText().toString();
                 if (matricule.isEmpty()) {
                     Toast.makeText(
                             LoginActivity.this,
@@ -52,7 +57,13 @@ public class LoginActivity extends AppCompatActivity {
     private void login(String matricule, String password) {
         progressBar.setVisibility(View.VISIBLE);
         boutonLogin.setEnabled(false);
-        SharedPreferences session = getSharedPreferences("session", 0);
-        session.edit().putBoolean("session_active", true).apply();
+
+        sharedPreferences = getSharedPreferences("session", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("session_active", true).apply();
+
+        Intent intent = new Intent(this, HomePageActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -8,15 +8,15 @@
 
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="25dp">
 
-
-
         <EditText
+
             android:id="@+id/editTextMatricule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,19 +24,20 @@
             android:inputType="text" />
 
         <EditText
+
             android:id="@+id/editTextPassWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Matricule"
+            android:hint="Mot de passe"
             android:inputType="textPassword" />
 
         <Button
+
             android:id="@+id/button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Se connecter" />
-
 
     </LinearLayout>
 
