@@ -26,8 +26,6 @@ public class ModifierProfileActivity extends AppCompatActivity {
     }
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +33,7 @@ public class ModifierProfileActivity extends AppCompatActivity {
 
         editTextAncienMdp = findViewById(R.id.editextAncienmdp);
         editTextNewMdp = findViewById(R.id.editextnouveauMdp);
+
         editTextConfirmerMdp = findViewById(R.id.editTextCofirmer);
         buttonModifier = findViewById(R.id.btnModifier);
 
@@ -72,12 +71,11 @@ public class ModifierProfileActivity extends AppCompatActivity {
                             ModifierProfileActivity.this,
                             "Veuillez confirmer le snouveau mot de passe",
                              Toast.LENGTH_LONG
-
                         ).show();
                     } else if (confirmerNewMdp.length() < 6) {
                         Toast.makeText(
                             ModifierProfileActivity.this,
-                             "Le nouveau de passe doit contenir au moins 6 caractères !",
+                            "Le nouveau de passe doit contenir au moins 6 caractères !",
                              Toast.LENGTH_LONG
                         ).show();
                     }else {
