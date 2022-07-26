@@ -15,7 +15,7 @@ public class ModifierProfileActivity extends AppCompatActivity {
 
     private EditText editTextAncienMdp;
     private EditText editTextNewMdp;
-    private EditText editTextConfirmerMdp;
+    private EditText editTextConfirmrMdp;
     private Button buttonModifier;
 
 
@@ -34,7 +34,7 @@ public class ModifierProfileActivity extends AppCompatActivity {
         editTextAncienMdp = findViewById(R.id.editextAncienmdp);
         editTextNewMdp = findViewById(R.id.editextnouveauMdp);
 
-        editTextConfirmerMdp = findViewById(R.id.editTextCofirmer);
+        editTextConfirmrMdp = findViewById(R.id.editTextCofirmer);
         buttonModifier = findViewById(R.id.btnModifier);
 
         buttonModifier.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +42,7 @@ public class ModifierProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String ancienMdp = editTextAncienMdp.getText().toString();
                 String nouveauMdp = editTextNewMdp.getText().toString();
-                String confirmerNewMdp = editTextConfirmerMdp.getText().toString();
+                String confirmerNewMdp = editTextConfirmrMdp.getText().toString();
 
                 if (!ancienMdp.toUpperCase().equals("19SM476")) {
                     Toast.makeText(
